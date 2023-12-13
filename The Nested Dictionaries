@@ -1,0 +1,53 @@
+#Nested Dictionaries | Jesse Elliott
+#This code will print out a mission for the player to embark on, in which a list of characters
+#will be presented for the player to know about
+
+'''The dictionary of names, details, and objects that they carry'''
+people = {'Mr. Body': {'full name': 'Mr. Brett Body',
+                       'trait': 'very rich',
+                       'health': '20 HP',
+                       'item slots': '6 slots'},
+          'Mr. Fring': {'full name': 'Mr. Gus Fring',
+                        'trait': 'the owner of a Resterant Chain',
+                        'health': '20 HP',
+                        'item slots': '6 slots'},
+          'Mr. Bane': {'full name': 'Mr. Bane',
+                       'trait': 'the leader of the free world',
+                       'health': '20 HP',
+                       'item slots': '6 slots'},
+          'Mr. Knight': {'full name': 'Mr. Meta Knight',
+                         'trait': 'the detective',
+                         'health': '20 HP',
+                         'item slots': '6 slots'}}
+
+'''This is the dictionary of the possible rooms and weapons in the area'''
+rooms = {'dining room': {'item': 'Candle Stick',
+                         'power': '5 Damage'},
+         'Bathroom': {'item': 'Toilet Paper',
+                      'power': '2 healing'},
+         'Billards': {'item': 'Pool Stick',
+                      'power': '7 Damage'},
+         'Kitchen': {'item': 'Kitchen Knife',
+                     'power': '8 Damage'}}
+
+#This part of the code will say the character's name, trait, and number of slots
+for name, name_info in people.items():
+    print(f"\n{name.title()}:")
+    full_name = f"{name_info['full name']}"
+    trait = f"{name_info['trait']}"
+    health = f"{name_info['health']}"
+    slots = f"{name_info['item slots']}"
+    
+    print(f"\tFull name: {full_name.title()}")
+    print(f"\tCharacter Trait: {trait.title()}")
+    print(f"\tCharacter Health: {health.title()}")
+    print(f"\tNumber of Item slots: {slots.title()}")
+
+#This is where the rooms and items in those rooms are listed
+for place, place_info in rooms.items():
+    print(f"\n{place.title()}:")
+    item = f"{place_info['item']}"
+    power = f"{place_info['power']}"
+    
+    print(f"\tItem in room: {item.title()}")
+    print(f"\tWhat the item can do: {power.title()}")
